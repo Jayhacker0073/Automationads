@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adsterra Multi-Ad Demo</title>
+  <style>
+    body { width: 20vw; min-height: 6000px; margin: 0 auto; padding: 0; background: #fff; font-family: Arial, sans-serif; }
+    .ad-container { width: 100%; text-align: center; margin: 40px 0; }
+    .sticky-ad { position: fixed; bottom: 0; left: 40vw; width: 20vw; background: #fff; z-index: 999; }
+    .sidebar-ad { position: fixed; top: 120px; right: calc(40vw - 170px); width: 160px; }
+    .section { margin: 60px 0; }
+    h1, h2 { color: #222; }
+    p { color: #444; line-height: 1.7; }
+    img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
+    ul, ol { color: #444; }
+    @media (max-width: 900px) {
+      body { width: 98vw; }
+      .sticky-ad, .sidebar-ad { left: 0; width: 100vw; right: 0; }
+      .sidebar-ad { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Banner 300x250 -->
+  <div class="ad-container" id="ad-300x250-1">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '66edc20175112b4837989cb85e5a0cd4',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/66edc20175112b4837989cb85e5a0cd4/invoke.js"></script>
+  </div>
+
+  <!-- Banner 160x300 -->
+  <div class="ad-container" id="ad-160x300-1">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'eb55bc2283c1346eebe574ae9a0455cc',
+        'format' : 'iframe',
+        'height' : 300,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/eb55bc2283c1346eebe574ae9a0455cc/invoke.js"></script>
+  </div>
+
+  <!-- Banner 468x60 -->
+  <div class="ad-container" id="ad-468x60-1">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'e0c371c23f8d2d8843859e6a3905371a',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/e0c371c23f8d2d8843859e6a3905371a/invoke.js"></script>
+  </div>
+
+  <!-- Banner 320x50 -->
+  <div class="ad-container" id="ad-320x50-1">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'c2d13959084c8bb2710c859ae022f0c0',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/c2d13959084c8bb2710c859ae022f0c0/invoke.js"></script>
+  </div>
+
+  <!-- Native Banner -->
+  <div class="ad-container" id="ad-nativebanner-1">
+    <script async="async" data-cfasync="false" src="//pl27274521.profitableratecpm.com/fd25b827dc7450d16106352b99359c1e/invoke.js"></script>
+    <div id="container-fd25b827dc7450d16106352b99359c1e"></div>
+  </div>
+
+  <!-- Social Bar -->
+  <div class="ad-container" id="ad-socialbar-1">
+    <script type='text/javascript' src='//pl27274534.profitableratecpm.com/48/6a/da/486ada24ec43b0ae39323a72335ba3d6.js'></script>
+  </div>
+
+  <!-- Direct Link as Button -->
+  <div class="ad-container" id="ad-directlink-1">
+    <a href="YOUR_ADSTERRA_DIRECT_LINK" target="_blank" style="display:inline-block;padding:16px 32px;background:#007bff;color:#fff;border-radius:6px;text-decoration:none;font-weight:bold;">Special Offer - Click Here!</a>
+  </div>
+
+  <!-- Repeat ad slots and content as needed for more impressions -->
+  <div class="section">
+    <h2>Latest Tech News</h2>
+    <p>Stay updated with the latest in technology, gadgets, and software. Our team brings you unbiased reviews and trending stories every day.</p>
+    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Newsroom">
+  </div>
+
+  <!-- Repeat Banner 300x250 -->
+  <div class="ad-container" id="ad-300x250-2">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '66edc20175112b4837989cb85e5a0cd4',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/66edc20175112b4837989cb85e5a0cd4/invoke.js"></script>
+  </div>
+
+  <!-- Sticky Footer Ad (e.g., 320x50 or Social Bar) -->
+  <div class="sticky-ad" id="ad-sticky">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'c2d13959084c8bb2710c859ae022f0c0',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/c2d13959084c8bb2710c859ae022f0c0/invoke.js"></script>
+  </div>
+
+  <script>
+    let scrollY = 0;
+    let direction = 1;
+    let isPaused = false;
+    let scrollTimeout = null;
+    let idleTimeout = null;
+
+    function randomPause() {
+      isPaused = true;
+      // Sometimes a long pause (user is idle/reading)
+      let pauseTime = Math.random() < 0.2
+        ? 2000 + Math.random() * 5000   // 2-7s long pause
+        : 500 + Math.random() * 2500;   // 0.5-3s short pause
+      setTimeout(() => { isPaused = false; }, pauseTime);
+    }
+
+    function jumpToRandomSection() {
+      // 7% chance to jump to a random section
+      if (Math.random() < 0.07) {
+        let maxY = document.body.scrollHeight - window.innerHeight;
+        scrollY = Math.floor(Math.random() * maxY);
+        window.scrollTo({ top: scrollY, behavior: 'smooth' });
+        randomPause();
+      }
+    }
+
+    function maybeResizeWindow() {
+      // 2% chance to resize window (simulate user adjusting window)
+      if (Math.random() < 0.02) {
+        let w = window.outerWidth + (Math.random() < 0.5 ? -1 : 1) * Math.floor(Math.random() * 60);
+        let h = window.outerHeight + (Math.random() < 0.5 ? -1 : 1) * Math.floor(Math.random() * 60);
+        window.resizeTo(w, h);
+      }
+    }
+
+    function maybeMoveMouse() {
+      // 5% chance to move mouse (simulate user moving mouse)
+      if (Math.random() < 0.05) {
+        let x = Math.floor(Math.random() * window.innerWidth);
+        let y = Math.floor(Math.random() * window.innerHeight);
+        let evt = new MouseEvent('mousemove', {
+          clientX: x,
+          clientY: y,
+          bubbles: true
+        });
+        document.dispatchEvent(evt);
+      }
+    }
+
+    function autoScroll() {
+      if (isPaused) return;
+
+      // Sometimes jump to a random section
+      jumpToRandomSection();
+
+      // Sometimes pause for a while (like reading)
+      if (Math.random() < 0.06) {
+        randomPause();
+        return;
+      }
+
+      // Sometimes change direction
+      if (Math.random() < 0.015) direction *= -1;
+
+      // Random scroll step (sometimes small, sometimes big)
+      let step = 1 + Math.random() * 16;
+      scrollY += direction * step;
+
+      // Clamp scrollY
+      if (scrollY < 0) { scrollY = 0; direction = 1; }
+      if (scrollY + window.innerHeight > document.body.scrollHeight) { direction = -1; }
+
+      window.scrollTo({ top: scrollY, behavior: 'smooth' });
+
+      // Maybe move mouse or resize window
+      maybeMoveMouse();
+      maybeResizeWindow();
+
+      // Vary the interval for next scroll (simulate uneven user scrolling)
+      let nextInterval = 60 + Math.random() * 180;
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(autoScroll, nextInterval);
+    }
+
+    // Start the first scroll
+    autoScroll();
+
+    // Auto-refresh every 15 seconds
+    setInterval(() => { location.reload(); }, 15000);
+  </script>
+</body>
+</html>
